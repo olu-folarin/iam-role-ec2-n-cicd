@@ -43,6 +43,10 @@ resource "aws_security_group" "http_server_sg" {
     protocol    = -1
     cidr_blocks = ["0.0.0.0/0"]
   }
+
+  tags = {
+    "name" = "http_server_sg"
+  }
 }
 # create and ec2 instance and link the role to it
 resource "aws_instance" "ec2_instance" {
