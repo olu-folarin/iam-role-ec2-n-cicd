@@ -17,11 +17,3 @@ resource "aws_iam_instance_profile" "ec2_profile" {
   role = aws_iam_role.folarin_ec2_role.name
 }
 
-# create and ec2 instance and link the role to it
-resource "aws_instance" "ec2_instance" {
-  ami           = "ami-0d09654d0a20d3ae2"
-  instance_type = "t2.micro"
-
-  # now link the role to the resource
-  iam_instance_profile = aws_iam_instance_profile.ec2_profile.name
-}
